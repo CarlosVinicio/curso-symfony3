@@ -26,11 +26,11 @@ class PruebasController extends Controller
         // replace this example code with whatever you need
 	
 	$productos = [
-	    array('producto' => 'Consola','precio' => 2),
-	    array('producto' => 'Consola','precio' => 2),
-	    array('producto' => 'Consola','precio' => 2),
-	    array('producto' => 'Consola','precio' => 2),
-	    array('producto' => 'Consola','precio' => 2)
+	    array('producto' => 'Consola 1','precio' => 2),
+	    array('producto' => 'Consola 2','precio' => 5),
+	    array('producto' => 'Consola 3','precio' => 1),
+	    array('producto' => 'Consola 4','precio' => 5),
+	    array('producto' => 'Consola 5','precio' => 4)
 	];
 	
 	$frutas = ['manzana' => 'golden', 'pera' => 'rica'];
@@ -41,4 +41,5 @@ class PruebasController extends Controller
 	    'frutas' => $frutas
         ]);
     } 
+    
 }

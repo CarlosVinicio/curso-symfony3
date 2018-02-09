@@ -7,10 +7,23 @@
     {{ texto }}
     
     <hr/>
-    {% for fruta in frutas %}
-        <h1>{{ fruta }}</h1>
-    {% endfor %}
-
+    
+        {{ frutas.manzana}}
+            <br/>
+    {% if frutas.pera starts with 'r'%}
+        {{ frutas.pera}}
+    {% endif%}
+    
+    <hr/>
+    
+    {# la funcion lenght es un filtro de twig #}
+    {% if productos|length > 0 %}
+        <ul> 
+            {% for producto in productos %}
+                <li>{{ producto.producto }} precio: {{ producto.precio}}</li>
+            {% endfor %}
+        <ul/>
+    {% endif %}
     
 {% endblock %}
 
