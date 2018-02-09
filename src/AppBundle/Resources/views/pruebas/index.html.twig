@@ -33,6 +33,7 @@
     {% set fecha = date()%}
     {{ dump(fecha) }}
     
+    {#Funciones de TWIG#}
     {# Podemos incluir partials con la función include #}
     {{ include('AppBundle:pruebas:partial.html.twig') }}
     
@@ -41,6 +42,12 @@
     
     {# Funcion que saca el menor #}
     {{min([1,5,9])}}
+    
+    <hr/>
+    
+    {%for indice in range(0, 10, 2)%}
+        {{ indice }}<br/>
+    {%endfor%}
 {% endblock %}
 
 
