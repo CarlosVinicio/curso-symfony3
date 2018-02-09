@@ -8,12 +8,11 @@
 {% block contenedor %}
     {{ parent()}}
     {{ texto }}
-    {{ mensaje }}
-
+    
     
     <hr/>
     
-        {{ frutas.manzana}}
+    {{ frutas.manzana}}
             <br/>
     {% if frutas.pera starts with 'r'%}
         {{ frutas.pera}}
@@ -30,6 +29,18 @@
         <ul/>
     {% endif %}
     
+    <hr>
+    {% set fecha = date()%}
+    {{ dump(fecha) }}
+    
+    {# Podemos incluir partials con la función include #}
+    {{ include('AppBundle:pruebas:partial.html.twig') }}
+    
+    {# Funcion que saca el mayor #}
+    {{max([1,5,9])}}
+    
+    {# Funcion que saca el menor #}
+    {{min([1,5,9])}}
 {% endblock %}
 
 
