@@ -1,0 +1,15 @@
+## YAML Template.
+---
+# definimos las rutas
+
+pruebas:index:
+    path: /pruebas/{name}/{page}
+    # Si ponemos un valor a los parametros tendra un valor por defecto
+    defaults: {_controller: AppBundle:Pruebas:index, name: nombre_por_defecto, page: apellido_por_defecto}
+    # Podemos especificar el metodo que vamos a utilizar
+    methods: [GET, POST]
+    # Requerimientos para los parametros de las rutas
+    requirements: 
+        name: "[A-Za-z]*"
+        page: \d+
+        

@@ -1,0 +1,23 @@
+
+{# vamos a heredar una PLANTILLA O LAYOUT en esta vista #}
+{% extends "layout.html.twig" %}
+
+{% block contenedor %}
+    {{ parent()}}
+    {{ texto }}
+    
+    <hr/>
+    {% for fruta in frutas %}
+        <h1>{{ fruta }}</h1>
+    {% endfor %}
+
+    
+{% endblock %}
+
+
+
+
+
+
+
+
