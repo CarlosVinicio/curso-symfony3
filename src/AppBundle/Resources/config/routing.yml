@@ -1,8 +1,18 @@
-## YAML Template.
----
-# definimos las rutas
+pruebas_delete:
+    path: /pruebas/delete/{id}
+    defaults: {_controller: AppBundle:Pruebas:delete}
 
-pruebas:index:
+pruebas_update:
+    path: /pruebas/update/{id}/{titulo}/{descripcion}/{precio}/
+    # Si ponemos un valor a los parametros tendra un valor por defecto
+    defaults: {_controller: AppBundle:Pruebas:update}
+    methods: [GET]
+    
+pruebas_read:
+    path: /pruebas/read
+    defaults: {_controller: AppBundle:Pruebas:read}
+    
+pruebas_index:
     path: /pruebas/{name}/{page}
     # Si ponemos un valor a los parametros tendra un valor por defecto
     defaults: {_controller: AppBundle:Pruebas:index, name: nombre_por_defecto, page: apellido_por_defecto}
@@ -13,3 +23,7 @@ pruebas:index:
         name: "[A-Za-z]*"
         page: \d+
         
+pruebas_create:
+    path: /pruebas/create
+    defaults: {_controller: AppBundle:Pruebas:create}
+       

@@ -48,6 +48,17 @@
     {%for indice in range(0, 10, 2)%}
         {{ indice }}<br/>
     {%endfor%}
+    
+    {# utilizar las funciones o helpers #}
+    {{ generateTable(5,2)|raw}}
+    
+    {# Usar el filtro creado por mi llamado addText en las vistas #}
+    <hr/>
+    {# cadena de texto sera el primer parametro de la funcion
+        addText(), y el numero pasado sera el segundo
+        y asi sucesivamente.
+    #}
+    {{"cadena de texto"|addText(28)}}
 {% endblock %}
 
 
