@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use \AppBundle\Entity\Curso;
 
 class PruebasController extends Controller
 {
@@ -40,6 +41,29 @@ class PruebasController extends Controller
 	    'productos' => $productos,
 	    'frutas' => $frutas
         ]);
-    } 
+    }
+    
+    public function createAction() 
+    {
+	var_dump('in');
+	$curso = new Curso();
+	$curso->setTitulo('Curso de Symfony3 de Carlos Vinicio');
+	$curso->setDescripcion('Curso de symfony3');
+	$curso->setPrecio(22);
+	
+	// Entity Manager de Doctrine
+	$em = $this->getDoctrine()->entityManager();
+	$em->persist($curso); // Guardamos los datos al ORM 
+	$flush = $em->flush(); // Volcamos los datos del ORM a la BBDD.
+	
+	// 
+	if ($flush != NULL){
+	    echo 'El curso no se ha creado bien';
+	} else {
+	    echo 'El curso se ha creado correctamente';
+	}
+	
+	die();
+    }
     
 }
